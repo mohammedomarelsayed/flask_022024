@@ -1,13 +1,14 @@
-from flask import Flask, abort, redirect, render_template, request, session, url_for, flash, Blueprint, get_flashed_messages
+from flask import Flask, abort, redirect, render_template, request, session, url_for
+from flask import flash, Blueprint, get_flashed_messages
 from flask_sqlalchemy import SQLAlchemy 
-from flask_login import UserMixin
+# from flask_login import UserMixin
 from datetime import datetime, timedelta
 
 app = Flask(__name__)
 # app.secret_key = "hello"
 # connecting the db to project
-db = SQLAlchemy(app)
-app.config ['SQLALCHEMY_DATABASE_URI'] = 'sqllite:///database.db'
+# db = SQLAlchemy(app)
+# app.config ['SQLALCHEMY_DATABASE_URI'] = 'sqllite:///database.db'
 app.config['SECRET_KEY'] = 'A1B2C3D4E5F66F5E4D3C2B1A'
 # app.permanent_session_lifetime = timedelta(miutes = 5)
 
@@ -63,6 +64,16 @@ def about():
                            var_about_title = 'O_About ',
                            page_head = 'X',
                            description = 'Y')
+    
+@app.route('/tst2')
+def tst():
+    return render_template('tst2.html',
+                           var_about_title = 'tst2 ',
+                           page_head = 'X',
+                           description = 'Y')    
+    
+    
+
     # flash ("about page flashing a msg")
 
 

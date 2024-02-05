@@ -5,13 +5,15 @@
         <title> {{var_welcome_title}} </title>
         <link rel="stylesheet" href= "{{url_for('static', filename = 'css/main.css')}}"/>
         <link rel="stylesheet" href= "{{url_for('static', filename = 'css/master.css')}}"/>
-    
-        
     </head>
-    <a href='index.html'> </a>
     <body>
         {%block body%}
-
+        <div class="topnav">
+          <a class="active" href="#home">Home</a>
+          <a href="#news">News</a>
+          <a href="#contact">Contact</a>
+          <a href="#about">About</a>
+        </div>
         {%endblock%}
     </body>
 
