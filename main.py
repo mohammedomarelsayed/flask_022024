@@ -38,8 +38,20 @@ def welcome():
                            var_welcome_title= 'O_wellcome ',
                            page_head = 'X',
                            page_description = 'Y')
+    
+@app.route('/login')
+def login():
+    return render_template('login.html',
+                           var_welcome_title= 'O_login ',
+                           page_head = 'you login here_head',
+                           page_description = 'description for loign page')
 
-
+@app.route('/register')
+def register():
+    return render_template('register.html',
+                           var_welcome_title= 'O_reg ',
+                           page_head = 'reg head',
+                           page_description = 'reg desc')
 
 @app.route('/about')
 def about():
