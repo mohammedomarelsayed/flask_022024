@@ -1,12 +1,16 @@
 from flask import Flask, abort, redirect, render_template, request, session, url_for, flash, Blueprint, get_flashed_messages
 from flask_sqlalchemy import SQLAlchemy 
-
+from flask_login import UserMixin
 from datetime import datetime, timedelta
 
 app = Flask(__name__)
-app.secret_key = "hello"
+# app.secret_key = "hello"
+# connecting the db to project
+db = SQLAlchemy(app)
+app.config ['SQLALCHEMY_DATABASE_URI'] = 'sqllite:///database.db'
+app.config['SECRET_KEY'] = 'A1B2C3D4E5F66F5E4D3C2B1A'
 # app.permanent_session_lifetime = timedelta(miutes = 5)
-# app.config['SECRET_KEY'] = 'A1B2C3D4E5F66F5E4D3C2B1A'
+
 # db = SQLAlchemy(app)
 # def index():
 #     return render_template('index.html',
