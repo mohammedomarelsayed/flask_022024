@@ -9,10 +9,9 @@ app = Flask(__name__)
 # connecting the db to project
 # db = SQLAlchemy(app)
 # app.config ['SQLALCHEMY_DATABASE_URI'] = 'sqllite:///database.db'
-app.config['SECRET_KEY'] = 'A1B2C3D4E5F66F5E4D3C2B1A'
+# app.config['SECRET_KEY'] = 'A1B2C3D4E5F66F5E4D3C2B1A'
 # app.permanent_session_lifetime = timedelta(miutes = 5)
 
-# db = SQLAlchemy(app)
 # def index():
 #     return render_template('index.html',
 #                            current_time=datetime.utcnow())
@@ -22,19 +21,14 @@ def index():
 # main = Blueprint('main', __name__)
 # from . import views, errors
 
-# @app.route('/tst')
-# def tst():
-#     return render_template('tst.html')
-
-
-# @app.route('/tst2')
-# def tst2():
-#     return render_template('tst2.html')
+@app.route('/tst')
+def tst():
+    return render_template('tst.html')
 
 # user's gretting algo.
-    # @app.route('/user/<name>')
-    # def user(name):
-    #     return '<h1>Hello, %s!</h1>' % name
+@app.route('/user/<name>')
+def user(name):
+        return '<h1>Hello, %s!</h1>' % name
 
 
 @app.route('/welcome')
