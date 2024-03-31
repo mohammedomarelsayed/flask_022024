@@ -3,6 +3,7 @@ from flask import flash, Blueprint, get_flashed_messages
 from flask_sqlalchemy import SQLAlchemy 
 # from flask_login import UserMixin
 from datetime import datetime, timedelta
+from forms import RegistrationForm , LoginForm
 
 app = Flask(__name__)
 # app.secret_key = "hello"
@@ -40,17 +41,21 @@ def welcome():
     
 @app.route('/login')
 def login():
+    form = LoginForm
     return render_template('login.html',
                            var_welcome_title= 'O_login ',
                            page_head = 'you login here_head',
-                           page_description = 'description for loign page')
+                           page_description = 'description for loign page',
+                           form = form)
 
 @app.route('/register')
 def register():
+    form = RegistrationForm
     return render_template('register.html',
                            var_welcome_title= 'O_reg ',
                            page_head = 'reg head',
-                           page_description = 'reg desc')
+                           page_description = 'reg desc',
+                           form = form)
 
 @app.route('/about')
 def about():
@@ -59,12 +64,12 @@ def about():
                            page_head = 'X',
                            description = 'Y')
     
-@app.route('/tst2')
-def tst():
-    return render_template('tst2.html',
-                           var_about_title = 'tst2 ',
-                           page_head = 'X',
-                           description = 'Y')    
+# @app.route('/tst2')
+# def tst():
+#     return render_template('tst2.html',
+#                            var_about_title = 'tst2 ',
+#                            page_head = 'X',
+#                            description = 'Y')    
     
     
 
